@@ -43,6 +43,8 @@ app.delete('/description', (req, res) => {
 app.put('description', (req, res) => {
   let id = req.query.prod_id;
   id = Number(id);
+  let brand = req.body.brand
+
 
   db.update(id, (err) => {
     if (err) {

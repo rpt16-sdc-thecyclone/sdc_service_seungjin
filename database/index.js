@@ -45,8 +45,9 @@ let delete = (itemNum) => {
   })
 }
 
-let update = (itemNum) => {
-  Product.updateOne({item_number: 'itemNum'}, {brand: 'Nike'}, (err) => {
+let update = (itemNum, productData) => {
+  const product = JSON.parse(productData);
+  Product.updateOne({item_number: 'itemNum'}, {brand: productData.brand}, (err) => {
     if (err) return handleError(err);
   })
 }
