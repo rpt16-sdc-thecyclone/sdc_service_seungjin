@@ -23,5 +23,33 @@ app.get('/description', (req,res) => {
   })
 })
 
+app.post('/description', (req,res) => {
+  let product = req.body;
+  db.save(product)
+    .catch(err => console.log(err));
+})
+
+app.delete('/description', (req, res) => {
+  let id = req.query.prod_id;
+  id = Number(id);
+
+  db.delete(id, (err) => {
+    if (err) {
+      res.send(err)
+    }
+  })
+})
+
+app.put('description', (req, res) => {
+  let id = req.query.prod_id;
+  id = Number(id);
+
+  db.update(id, (err) => {
+    if (err) {
+      res.send(err)
+    }
+  })
+})
+
 
 module.exports = app

@@ -66,7 +66,7 @@ var ship_pay = new Schema ({
 });
 
 var Product = mongoose.model('Product', description);
-var Purchase = mongoose.model('Purchase', ship_pay)
+var Purchase = mongoose.model('Purchase', ship_pay);
 
 module.exports = {
   Product,
