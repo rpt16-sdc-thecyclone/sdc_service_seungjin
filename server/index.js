@@ -33,7 +33,7 @@ app.delete('/description', (req, res) => {
   let id = req.query.prod_id;
   id = Number(id);
 
-  db.delete(id, (err) => {
+  db.deleteQuery(id, (err) => {
     if (err) {
       res.send(err)
     }

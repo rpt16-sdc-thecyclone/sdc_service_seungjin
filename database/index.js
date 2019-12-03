@@ -39,7 +39,7 @@ let queryPurc = (itemNum,cb) => {
   })
 }
 
-let delete = (itemNum) => {
+let deleteQuery = (itemNum) => {
   Product.deleteOne({item_number: 'itemNum'}, (err) => {
     if (err) return handleError(err);
   })
@@ -53,29 +53,6 @@ let update = (itemNum, productData) => {
 }
 
 let save = (productData) => {
-  // let newData = new Product({
-  //   item_number: 100000,
-  //   list_date: 'Oct 21, 2019 07:38:38 PDT',
-  //   item_spec: {
-  //     condition: "New: A brand new unused, unopend, undamaged item (including handmade items).",
-  //     brand: "Nike",
-  //     type: "",
-  //     packaging: "",
-  //     material: "",
-  //     rec_age: "",
-  //     char_family: "",
-  //     manfactured: "",
-  //     era: String,
-  //     year: 2017,
-  //     size: "",
-  //     upc: 882041003253
-  //   },
-  //   seller_msg: {
-  //     prod_des: "Buy this item. It is the best thing in the world",
-  //     item_des: "A picture is worth a 1000 words",
-  //     img_url: ""
-  //   }
-  // })
   const product = JSON.parse(productData);
 
   let newData = new Product({
@@ -99,6 +76,7 @@ let save = (productData) => {
       prod_des: product.prod_desc,
       item_des: product.item_des,
       img_url: ""
+    }
   })
 
 
@@ -117,6 +95,6 @@ module.exports = {
   queryProd,
   queryPurc,
   save,
-  delete,
+  deleteQuery,
   update
 }

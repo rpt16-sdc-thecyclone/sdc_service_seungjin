@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Promise = require('bluebird');
-const mongoUrl = 'mongodb://mongo:27017/description'
+const mongoUrl = 'mongodb://localhost/description'
 
 var connectWithRetry = function() {
   let count = 0;
