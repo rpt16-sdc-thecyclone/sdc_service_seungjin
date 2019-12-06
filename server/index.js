@@ -3,7 +3,8 @@ const bodyParser = require('body-parser');
 const querystring = require('querystring');
 const url = require('url');
 const cors = require('cors');
-const db = require('../database/index.js');
+// const db = require('../database/index.js');
+const db = require('../database/index1.js');
 const app = express();
 
 app.use(cors());

@@ -20,7 +20,7 @@ CREATE TABLE sdcSchema.description (
   size VARCHAR,
   upc INTEGER,
   seller_prod_desc TEXT,
-  seller_item_des TEXT,
+  seller_item_desc TEXT,
   seller_img_url TEXT,
   hand_item_location TEXT,
   hand_ship_to TEXT,
@@ -30,7 +30,7 @@ CREATE TABLE sdcSchema.description (
   ship_region TEXT,
   ship_service TEXT,
   ship_est_time DATE,
-  return_exist TEXT,
+  return_exist BOOLEAN,
   return_deadline INTEGER,
   return_type TEXT,
   return_pay_shipping TEXT
