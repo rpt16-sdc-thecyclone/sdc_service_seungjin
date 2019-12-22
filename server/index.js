@@ -3,8 +3,7 @@ const bodyParser = require('body-parser');
 const querystring = require('querystring');
 const url = require('url');
 const cors = require('cors');
-// const db = require('../database/index.js');
-const db = require('../database/index1.js');
+const db = require('../database/index.js');
 const app = express();
 
 app.use(cors());
@@ -24,35 +23,6 @@ app.get('/description', (req,res) => {
   })
 })
 
-app.post('/description', (req,res) => {
-  let product = req.body;
-  db.save(product)
-    .catch(err => console.log(err));
-})
-
-app.delete('/description', (req, res) => {
-  let id = req.query.prod_id;
-  id = Number(id);
-
-  db.deleteQuery(id, (err) => {
-    if (err) {
-      res.send(err)
-    }
-  })
-})
-
-app.put('description', (req, res) => {
-  let id = req.query.prod_id;
-  id = Number(id);
-  let brand = req.body.brand
-
-
-  db.update(id, (err) => {
-    if (err) {
-      res.send(err)
-    }
-  })
-})
 
 
 module.exports = app
